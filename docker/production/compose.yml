@@ -67,10 +67,17 @@ services:
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_HOST=documenso.davidaquiros.site
       - LETSENCRYPT_EMAIL=tu-email@gmail.com
+    networks:
+      - default
+      - proxy
     ports:
       - ${PORT:-3000}:${PORT:-3000}
     volumes:
       - /opt/documenso/cert.p12:/opt/documenso/cert.p12:ro
+
+networks:
+  proxy:
+    external: true
 
 volumes:
   database:
