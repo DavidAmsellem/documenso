@@ -18,4 +18,4 @@ jobs:
           script: |
             cd ${{ secrets.SSH_TARGET }}
             git pull origin main
-            docker compose -f docker/production/compose.yml up -d --build
+            docker compose -f docker/production/compose.yml --env-file .env up -d --build
