@@ -63,6 +63,10 @@ services:
       - NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=${NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH:-/opt/documenso/cert.p12}
       - NEXT_PRIVATE_SIGNING_PASSPHRASE=${NEXT_PRIVATE_SIGNING_PASSPHRASE}
       - NEXT_PUBLIC_USE_INTERNAL_URL_BROWSERLESS=${NEXT_PUBLIC_USE_INTERNAL_URL_BROWSERLESS}
+      - VIRTUAL_HOST=documenso.davidaquiros.site
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=documenso.davidaquiros.site
+      - LETSENCRYPT_EMAIL=tu-email@gmail.com
     ports:
       - ${PORT:-3000}:${PORT:-3000}
     volumes:
